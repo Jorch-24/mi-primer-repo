@@ -16,14 +16,35 @@ class persona{
     
 }
 
+class Cuenta{
+    double saldo;
+
+    Cuenta(double saldoInicial){
+        saldo = saldoInicial;
+    }
+    void cargar(double cantidad){
+        saldo = saldo - cantidad;
+    }
+
+    void abonar(double cantidad){
+        saldo = saldo + cantidad;
+    }
+}
+
 class Cliente extends persona{
     int numero;
+    Cuenta cuenta;
+
 
     Cliente(String Nombre, String Sexo, int Edad, int numero){
         super(Nombre, Sexo, Edad);
         this.numero = numero;
         
 
+    }
+
+    void asociarCuenta(Cuenta cuenta){
+        this.cuenta = cuenta;
     }
 
     
@@ -41,7 +62,7 @@ class Banco{
         System.out.println("creando cliente....");
         Cliente cliente = new Cliente(nombre, sexo, edad, numero);
 
-        for (int i =0; i< cli; i++){
+        for (int i =0; i< cliente; i++){
             if (clientes[i] = null){
                 clientes = clientes;
                 System.out.println("cliente creado exitosamente");
@@ -65,7 +86,7 @@ class Banco{
 
 class programa{
     public static void main(String[] args){
-        System.out.println("Hello word");
+        System.out.println("Hello wordline");
     }
 
 
